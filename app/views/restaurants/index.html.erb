@@ -1,0 +1,31 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container d-flex justify-content-center">
+    <h1 class="display-4">Restaurants</h1>
+  </div>
+</div>
+<br>
+<div class="container d-flex flex-column justify-content-center align-items-center">
+  <div class="row col-6">
+    <ul class='list-group list-group-flush'>
+      <% @restaurants.each do |restaurant|%>
+        <li class='list-group-item'>
+          <%= link_to restaurant_path(restaurant) do %>
+            <%= restaurant.name %>
+          <% end %>
+          <br>
+          <%= restaurant.address %>
+          <%= restaurant.phone_number %>
+          <span> - </span>
+          <%= restaurant.category %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="row col-6 m-3 d-flex justify-content-center">
+    <%= link_to new_restaurant_path do %>
+      <div class="btn btn-primary">
+        <span>Add a new restaurant</span>
+      </div>
+    <% end %>
+  </div>
+</div>

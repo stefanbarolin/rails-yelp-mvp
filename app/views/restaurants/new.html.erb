@@ -1,0 +1,22 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container d-flex justify-content-center">
+    <h1 class="display-4">Add a New Restaurant</h1>
+  </div>
+</div>
+<br>
+<div class="container">
+  <%= simple_form_for @restaurant do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :phone_number %>
+  <%= f.input :category %>
+  <%= f.button :submit %>
+  <% end %>
+  <div class="row col-6 m-3 d-flex justify-content-center">
+    <%= link_to restaurants_path do %>
+      <div class="btn btn-primary">
+        <span>Back to restaurant list</span>
+      </div>
+    <% end %>
+  </div>
+</div>
