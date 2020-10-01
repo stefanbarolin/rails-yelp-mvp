@@ -1,0 +1,22 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container d-flex justify-content-center">
+    <h1 class="display-4">Leave a Review</h1>
+  </div>
+</div>
+<br>
+<div class="container d-flex flex-column justify-content-center align-items-center">
+  <div class="row col-6 m-3 d-flex justify-content-center">
+    <%= simple_form_for [@restaurant, @review] do |f| %>
+    <%= f.input :content %>
+    <%= f.input :rating %>
+    <%= f.submit 'Send review' %>
+    <% end %>
+  </div>
+  <div class="row col-6 m-3 d-flex justify-content-center">
+    <%= link_to restaurants_path do %>
+      <div class="btn btn-primary">
+        <span>Back to restaurant list</span>
+      </div>
+    <% end %>
+  </div>
+</div>
